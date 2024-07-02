@@ -68,7 +68,7 @@ export const Footer = memo((): ReactElement => {
                 <Link href={element.link} className="font-light">
                   {element.title}
                 </Link>
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 opacity-15 group-hover:opacity-100 text-gray-50" />
+                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 text-[#f9fafb26] group-hover:text-gray-50" />
               </li>
             ))}
           </ul>
@@ -93,7 +93,7 @@ export const Footer = memo((): ReactElement => {
                 >
                   {element.title}
                 </Link>
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 opacity-15 group-hover:opacity-100 text-gray-50" />
+                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 text-[#f9fafb26] group-hover:text-gray-50" />
               </li>
             ))}
           </ul>
@@ -101,7 +101,7 @@ export const Footer = memo((): ReactElement => {
       </div>
 
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
-        <div className="opacity-20">
+        <div className="text-[#f9fafb33]">
           <div>{currentDate}</div>
           <div suppressHydrationWarning>{currentTime}</div>
         </div>
@@ -109,7 +109,7 @@ export const Footer = memo((): ReactElement => {
         <div className="mt-2 lg:mt-0 lg:text-right">
           <Link
             href="/"
-            className="uppercase text-sm font-medium opacity-25 hover:opacity-100 hover:text-brand-primary"
+            className="uppercase text-sm font-medium text-[#f9fafb40] hover:text-brand-primary"
           >
             Move to top
           </Link>
