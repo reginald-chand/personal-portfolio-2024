@@ -1,0 +1,124 @@
+"use client";
+
+import Link from "next/link";
+import { ReactElement, memo, useEffect, useState } from "react";
+import { FooterImportantNavLinks } from "../data/footer-important-nav-links";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { FooterImportantSocialMediaLinks } from "../data/footer-important-social-media-links";
+
+export const Footer = memo((): ReactElement => {
+  const currentDate = new Date().toDateString();
+  const [currentTime, setCurrentTime] = useState(new Date().toTimeString());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date().toTimeString());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <footer className="w-full min-h-[3.75rem] p-5 grid gap-y-5 border-t-2 border-gray-900 border-dashed">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+        <div className="mb-2 lg:mb-0">
+          <span>Copyright &copy;</span>
+          <Link
+            href="https://github.com/reginald-chand"
+            target="_blank"
+            rel="noreferrer noopener"
+            title="Open GitHub"
+            className="underline font-black hover:text-brand-primary transition-colors duration-300 ease-linear"
+          >
+            <strong>&nbsp;Reginald Sahil Chand&nbsp;</strong>
+          </Link>
+          <div className="lg:hidden">
+            2024 &middot; <em>All Rights Reserved</em>
+          </div>
+
+          <span className="hidden lg:inline">
+            &middot; 2024 &middot; <em>All Rights Reserved</em>
+          </span>
+        </div>
+
+        <div>
+          <span>Designed &amp; Developed with 💗 By&nbsp;</span>
+          <Link
+            href="https://github.com/reginald-chand"
+            target="_blank"
+            rel="noreferrer noopener"
+            title="Open GitHub"
+            className="underline font-black hover:text-brand-primary transition-colors duration-300 ease-linear"
+          >
+            <strong>Reginald Sahil Chand</strong>
+          </Link>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row items-start justify-between">
+        <div>
+          <div className="font-semibold mb-2">Important Navigation Links</div>
+          <ul>
+            {FooterImportantNavLinks.map((element, index) => (
+              <li
+                key={index}
+                className="flex items-center justify-start hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear group"
+              >
+                <div className="w-4 h-4 mr-2">{element.icon}</div>
+                <Link href={element.link} className="font-light">
+                  {element.title}
+                </Link>
+                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 opacity-15 group-hover:opacity-100 text-gray-50" />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <div className="font-semibold mt-5 lg:mt-0 mb-2">
+            Social Media Links
+          </div>
+          <ul>
+            {FooterImportantSocialMediaLinks.map((element, index) => (
+              <li
+                key={index}
+                className="flex items-center justify-start hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear group"
+              >
+                <div className="w-4 h-4 mr-2">{element.icon}</div>
+                <Link
+                  href={element.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="font-light"
+                >
+                  {element.title}
+                </Link>
+                <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 opacity-15 group-hover:opacity-100 text-gray-50" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+        <div className="opacity-20">
+          <div>{currentDate}</div>
+          <div suppressHydrationWarning>{currentTime}</div>
+        </div>
+
+        <div className="mt-2 lg:mt-0 lg:text-right">
+          <Link
+            href="/"
+            className="uppercase text-sm font-medium opacity-25 hover:opacity-100 hover:text-brand-primary"
+          >
+            Move to top
+          </Link>
+
+          <div>Have a great day 😁</div>
+        </div>
+      </div>
+    </footer>
+  );
+});
+
+Footer.displayName = "Footer";
