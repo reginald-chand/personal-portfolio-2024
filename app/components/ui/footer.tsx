@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ReactElement, memo, useEffect, useState } from "react";
 import { FooterImportantNavLinks } from "../data/footer-important-nav-links";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { FooterImportantSocialMediaLinks } from "../data/footer-important-social-media-links";
 
 export const Footer = memo((): ReactElement => {
+  const pathname = usePathname();
   const currentDate = new Date().toDateString();
   const [currentTime, setCurrentTime] = useState(new Date().toTimeString());
 
@@ -60,12 +62,21 @@ export const Footer = memo((): ReactElement => {
           <div className="font-semibold mb-2">Important Navigation Links</div>
           <ul>
             {FooterImportantNavLinks.map((element, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-start hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear group"
-              >
+              <li key={index} className="flex items-center justify-start group">
                 <div className="w-4 h-4 mr-2">{element.icon}</div>
-                <Link href={element.link} className="font-light">
+                <Link
+                  href={element.link}
+                  title={`${
+                    pathname === element.link
+                      ? "Current Page"
+                      : `Open ${element.title}`
+                  }`}
+                  className={`font-light hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                    pathname === element.link
+                      ? "text-brand-primary line-through"
+                      : "text-gray-50 no-underline"
+                  }`}
+                >
                   {element.title}
                 </Link>
                 <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 text-[#f9fafb26] group-hover:text-gray-50" />
@@ -80,16 +91,13 @@ export const Footer = memo((): ReactElement => {
           </div>
           <ul>
             {FooterImportantSocialMediaLinks.map((element, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-start hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear group"
-              >
+              <li key={index} className="flex items-center justify-start group">
                 <div className="w-4 h-4 mr-2">{element.icon}</div>
                 <Link
                   href={element.link}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="font-light"
+                  className="font-light hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear"
                 >
                   {element.title}
                 </Link>
