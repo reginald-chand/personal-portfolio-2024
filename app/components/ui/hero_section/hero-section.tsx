@@ -52,6 +52,7 @@ export const HeroSection = memo((): ReactElement => {
           title="Image Sourced From (undraw.co)"
           width={500}
           height={500}
+          priority
           className="hidden w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] md:block"
         />
       </div>
