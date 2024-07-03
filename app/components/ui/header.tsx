@@ -14,7 +14,7 @@ export const Header = memo((): ReactElement => {
   };
 
   return (
-    <header className="w-full h-20 p-5 sticky top-0 left-0 flex items-center justify-between border-b-2 border-gray-900 border-dashed bg-gray-950">
+    <header className="w-full h-20 p-5 sticky top-0 left-0 flex items-center justify-between border-b-2 border-gray-900 border-dashed bg-gray-950 z-50">
       <Logo brandName="Reginald Chand" brandSlogan="Full Stack Engineer" />
       <Hamburger
         hamburgerFunction={handleNavigationDrawer}
