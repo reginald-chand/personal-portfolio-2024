@@ -18,7 +18,7 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
   }, []);
 
   return (
-    <section id="featured-projects" className="w-full min-h-screen p-5 ">
+    <section id="featured-projects" className="w-full p-5">
       <h2 className="mb-5 text-2xl">
         Featured Projects&nbsp;
         <sup className="text-brand-primary">{featuredProjectsCount}</sup>
