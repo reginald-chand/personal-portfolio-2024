@@ -16,18 +16,6 @@ export const HeaderNavLinks: Readonly<HeaderNavLinksType[]> = [
   },
 
   {
-    title: "Featured projects",
-    link: "#featured-projects",
-    icon: <TagIcon />,
-  },
-
-  {
-    title: "Upcoming projects",
-    link: "#upcoming-projects",
-    icon: <TagIcon />,
-  },
-
-  {
     title: "All projects",
     link: "/projects/backend",
     icon: <SquaresPlusIcon />,
