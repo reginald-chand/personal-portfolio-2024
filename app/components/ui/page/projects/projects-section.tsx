@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactElement, memo, useState } from "react";
+import { ReactElement, memo, useEffect, useState } from "react";
 import { ProjectsNavigation } from "./projects-navigation";
 import { Projects } from "./projects";
 import { useProjectList } from "../../../hooks/use-project-list";
@@ -10,13 +10,18 @@ import { FeaturedProjectsSectionProjectsData } from "@/app/components/data/featu
 
 export const ProjectsSection = memo((): ReactElement => {
   const [searchPrompt, setSearchPrompt] = useState<string>();
-
-  const backendProjectsUrl = "projects/backend";
-  const fullStackProjectsUrl = "projects/fullstack";
+  const [projectsUrl, setProjectsUrl] = useState<any>();
 
   const handleSearchPrompt = (event: any) => {
     setSearchPrompt(event.target.value);
   };
+
+  const backendProjectsUrl = "/projects/backend";
+  const fullStackProjectsUrl = "/projects/fullstack";
+
+  useEffect(() => {
+    setProjectsUrl(window.location.pathname);
+  }, [projectsUrl]);
 
   const [backendNewProjectList] = useProjectList({
     searchPrompt: searchPrompt,
@@ -33,15 +38,11 @@ export const ProjectsSection = memo((): ReactElement => {
       <ProjectsSearch handleSearchPrompt={handleSearchPrompt} />
       <ProjectsNavigation />
       <Projects
-        hideView={
-          window.location.href.includes(backendProjectsUrl) ? false : true
-        }
+        hideView={backendProjectsUrl === projectsUrl ? false : true}
         projectList={backendNewProjectList}
       />
       <Projects
-        hideView={
-          window.location.href.includes(fullStackProjectsUrl) ? false : true
-        }
+        hideView={fullStackProjectsUrl === projectsUrl ? false : true}
         projectList={fullStackNewProjectList}
       />
     </section>
