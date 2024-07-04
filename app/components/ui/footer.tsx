@@ -1,5 +1,6 @@
 "use client";
 
+import { Link as ReactScrollLink } from "react-scroll";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactElement, memo, useEffect, useState } from "react";
@@ -64,21 +65,43 @@ export const Footer = memo((): ReactElement => {
             {FooterImportantNavLinks.map((element, index) => (
               <li key={index} className="flex items-center justify-start group">
                 <div className="w-4 h-4 mr-2">{element.icon}</div>
-                <Link
-                  href={element.link}
-                  title={`${
-                    pathname === element.link
-                      ? "Current Page"
-                      : `Open ${element.title}`
-                  }`}
-                  className={`font-light hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
-                    pathname === element.link
-                      ? "text-brand-primary line-through"
-                      : "text-gray-50 no-underline"
-                  }`}
-                >
-                  {element.title}
-                </Link>
+                {element.link.includes("#") ? (
+                  <ReactScrollLink
+                    to={element.link.substring(1)}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    title={`${
+                      pathname === element.link
+                        ? "Current Page"
+                        : `Open ${element.title}`
+                    }`}
+                    className={`text-lg lg:text-sm font-bold lg:font-normal cursor-pointer hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                      pathname === element.link
+                        ? "text-brand-primary line-through"
+                        : "text-gray-50 no-underline"
+                    }`}
+                  >
+                    {element.title}
+                  </ReactScrollLink>
+                ) : (
+                  <Link
+                    href={element.link}
+                    title={`${
+                      pathname === element.link
+                        ? "Current Page"
+                        : `Open ${element.title}`
+                    }`}
+                    className={`font-light hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                      pathname === element.link
+                        ? "text-brand-primary line-through"
+                        : "text-gray-50 no-underline"
+                    }`}
+                  >
+                    {element.title}
+                  </Link>
+                )}
                 <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2 text-[#f9fafb26] group-hover:text-gray-50" />
               </li>
             ))}

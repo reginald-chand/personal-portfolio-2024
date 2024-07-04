@@ -1,5 +1,6 @@
 import { ReactElement, memo } from "react";
 import { HeaderNavLinksType } from "../types/header-nav-links-type";
+import { Link as ReactScrollLink } from "react-scroll";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { propValidator } from "../utils/error/prop-validation";
@@ -58,22 +59,45 @@ export const HeaderNavigation = memo(
               className="mb-2 last:mb-0 lg:mb-0 lg:mr-3 flex items-center justify-start"
             >
               <div className="w-4 h-4 mr-2 lg:hidden">{element.icon}</div>
-              <Link
-                href={element.link}
-                title={`${
-                  pathname === element.link
-                    ? "Current Page"
-                    : `Open ${element.title}`
-                }`}
-                onClick={handleNavigationDrawer}
-                className={`text-lg lg:text-sm font-bold lg:font-normal hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
-                  pathname === element.link
-                    ? "text-brand-primary line-through"
-                    : "text-gray-50 no-underline"
-                }`}
-              >
-                {element.title}
-              </Link>
+              {element.link.includes("#") ? (
+                <ReactScrollLink
+                  to={element.link.substring(1)}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  title={`${
+                    pathname === element.link
+                      ? "Current Page"
+                      : `Open ${element.title}`
+                  }`}
+                  onClick={handleNavigationDrawer}
+                  className={`text-lg lg:text-sm font-bold lg:font-normal cursor-pointer hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                    pathname === element.link
+                      ? "text-brand-primary line-through"
+                      : "text-gray-50 no-underline"
+                  }`}
+                >
+                  {element.title}
+                </ReactScrollLink>
+              ) : (
+                <Link
+                  href={element.link}
+                  title={`${
+                    pathname === element.link
+                      ? "Current Page"
+                      : `Open ${element.title}`
+                  }`}
+                  onClick={handleNavigationDrawer}
+                  className={`text-lg lg:text-sm font-bold lg:font-normal hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                    pathname === element.link
+                      ? "text-brand-primary line-through"
+                      : "text-gray-50 no-underline"
+                  }`}
+                >
+                  {element.title}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

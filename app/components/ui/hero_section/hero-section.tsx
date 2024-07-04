@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { ReactElement, memo } from "react";
 
 export const HeroSection = memo((): ReactElement => {
@@ -35,9 +37,13 @@ export const HeroSection = memo((): ReactElement => {
         </p>
 
         <Link
-          href="#featured-projects"
+          to="featured-projects"
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
           type="button"
-          className="p-5 inline-block rounded-md border-2 border-dashed border-transparent bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+          className="p-5 inline-block rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
         >
           <span className="inline-block font-bold lowercase group-hover:text-brand-primary transition-colors duration-300 ease-linear">
             View Featured Projects
