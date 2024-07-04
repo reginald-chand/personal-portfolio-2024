@@ -21,7 +21,7 @@ export const Footer = memo((): ReactElement => {
   }, []);
 
   return (
-    <footer className="w-full min-h-[3.75rem] p-5 grid gap-y-5 border-t-2 border-gray-900 border-dashed">
+    <footer className="w-full p-5 grid gap-y-5 border-t-2 border-gray-900 border-dashed">
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
         <div className="mb-2 lg:mb-0">
           <span>Copyright &copy;</span>
