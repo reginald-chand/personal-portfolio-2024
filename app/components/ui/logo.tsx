@@ -14,7 +14,7 @@ export const Logo = memo(
     propValidator({ prop: brandSlogan, propName: "brandSlogan" });
 
     return (
-      <Link href="#" title="Home" className="group">
+      <Link href="/" title="Home" className="group">
         <div className="lg:text-xl font-black uppercase text-brand-primary group-hover:text-gray-50 group-hover:underline transition-colors duration-300 ease-linear">
           {brandName}
         </div>
