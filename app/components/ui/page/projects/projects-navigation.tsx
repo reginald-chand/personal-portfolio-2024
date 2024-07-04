@@ -8,7 +8,7 @@ export const ProjectsNavigation = memo((): ReactElement => {
   };
 
   const openFullStackProjects = () => {
-    if (!window.location.href.includes("fullstack/fullstack")) {
+    if (!window.location.href.includes("projects/fullstack")) {
       window.location.href = "/projects/fullstack";
     }
   };
