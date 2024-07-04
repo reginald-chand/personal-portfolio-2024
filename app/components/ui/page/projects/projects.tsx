@@ -2,19 +2,9 @@ import { ReactElement, memo } from "react";
 import Link from "next/link";
 
 export const Projects = memo(
-  ({
-    hideView,
-    projectList,
-  }: {
-    hideView: boolean;
-    projectList: Readonly<Array<object>>;
-  }): ReactElement => {
+  ({ projectList }: { projectList: Readonly<Array<object>> }): ReactElement => {
     return (
-      <section
-        className={`${
-          hideView ? "hidden" : "block"
-        } p-5 border-2 border-dashed border-gray-900 rounded-md`}
-      >
+      <section className="p-5 border-2 border-dashed border-gray-900 rounded-md">
         <div className="h-screen overflow-y-scroll">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {projectList.length === 0 ? (
