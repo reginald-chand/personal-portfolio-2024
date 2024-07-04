@@ -25,13 +25,13 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
       </h2>
       <div
         ref={featuredProjectsContainer}
-        className="grid auto-rows-[minmax(300px, auto)] grid-cols-1 md:grid-cols-2 gap-5"
+        className="grid grid-cols-1 md:grid-cols-2 gap-5"
       >
         {FeaturedProjectsSectionProjectsData &&
           FeaturedProjectsSectionProjectsData.map((element, index) => (
             <div
               key={index}
-              className="p-5 border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear"
+              className="p-5 relative border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear"
             >
               <Link
                 href={element.link}
@@ -42,7 +42,7 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
                 {element.title}
               </Link>
 
-              <p className="mb-5 font-light">
+              <p className="h-[260px] lg:h-[150px] font-light">
                 {element.description.length <= 200
                   ? element.description
                   : `${element.description.substring(0, 200)}...`}
@@ -52,7 +52,7 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
                 href={element.link}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="p-2 inline-block font-bold capitalize rounded-md border-2 border-dashed border-transparent bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+                className="p-2 absolute bottom-5 left-5 inline-block font-bold capitalize rounded-md border-2 border-dashed border-transparent bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
               >
                 <span className="inline-block font-bold lowercase group-hover:text-brand-primary transition-colors duration-300 ease-linear">
                   Open Project
