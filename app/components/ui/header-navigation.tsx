@@ -7,7 +7,7 @@ import { propValidator } from "../utils/error/prop-validation";
 import { Logo } from "./logo";
 import { Hamburger } from "./hamburger";
 import { BarsArrowDownIcon } from "@heroicons/react/24/outline";
-import { OnlyHomeHeaderNavLinks } from "../data/header-home-navigation-links";
+import { OnlyHomeHeaderNavLinks } from "../data/header-home-nav-links";
 
 type Props = {
   navigationDrawer: boolean;
