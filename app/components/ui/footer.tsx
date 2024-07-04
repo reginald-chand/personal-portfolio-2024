@@ -122,7 +122,7 @@ export const Footer = memo((): ReactElement => {
             Move to top
           </Link>
 
-          <div>Have a great day 😁</div>
+          <div className="mt-2 lg:mt-0">Have a great day 😁</div>
         </div>
       </div>
     </footer>
