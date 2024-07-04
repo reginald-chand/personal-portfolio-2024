@@ -42,7 +42,7 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
                 {element.title}
               </Link>
 
-              <p className="h-[260px] lg:h-[150px] font-light">
+              <p className="h-fit lg:h-[150px] mb-5 lg:mb-0 font-light">
                 {element.description.length <= 200
                   ? element.description
                   : `${element.description.substring(0, 200)}...`}
@@ -52,7 +52,7 @@ export const FeaturedProjectsSection = memo((): ReactElement => {
                 href={element.link}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="p-2 absolute bottom-5 left-5 inline-block font-bold capitalize rounded-md border-2 border-dashed border-transparent bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+                className="p-2 lg:absolute bottom-5 left-5 inline-block font-bold capitalize rounded-md border-2 border-dashed border-transparent bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
               >
                 <span className="inline-block font-bold lowercase group-hover:text-brand-primary transition-colors duration-300 ease-linear">
                   Open Project
