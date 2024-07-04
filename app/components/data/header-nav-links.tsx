@@ -29,7 +29,7 @@ export const HeaderNavLinks: Readonly<HeaderNavLinksType[]> = [
 
   {
     title: "All projects",
-    link: "/projects",
+    link: "/projects/backend",
     icon: <SquaresPlusIcon />,
   },
 

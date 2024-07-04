@@ -36,7 +36,7 @@ export const FooterImportantNavLinks: Readonly<FooterImportantNavLinksType[]> =
 
     {
       title: "All projects",
-      link: "/projects",
+      link: "/projects/backend",
       icon: <SquaresPlusIcon />,
     },
 
