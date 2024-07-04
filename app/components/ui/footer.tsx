@@ -77,7 +77,7 @@ export const Footer = memo((): ReactElement => {
                         ? "Current Page"
                         : `Open ${element.title}`
                     }`}
-                    className={`text-lg lg:text-sm font-bold lg:font-normal cursor-pointer hover:text-brand-primary hover:underline transition-colors duration-300 ease-linear ${
+                    className={`font-light hover:text-brand-primary cursor-pointer hover:underline transition-colors duration-300 ease-linear  ${
                       pathname === element.link
                         ? "text-brand-primary line-through"
                         : "text-gray-50 no-underline"
