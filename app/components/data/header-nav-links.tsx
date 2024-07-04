@@ -2,7 +2,6 @@ import {
   HomeIcon,
   PhoneIcon,
   SquaresPlusIcon,
-  TagIcon,
   UserGroupIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
