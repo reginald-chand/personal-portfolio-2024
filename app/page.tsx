@@ -7,7 +7,7 @@ import { UpComingProjectsSection } from "./components/ui/upcoming_projects_secti
 export default function Home(): ReactElement {
   return (
     <GlobalLayout>
-      <main className="w-full min-h-screen">
+      <main className="w-full 2xl:w-[1920px] 2xl:mx-auto min-h-screen">
         <HeroSection />
         <FeaturedProjectsSection />
         <UpComingProjectsSection />
