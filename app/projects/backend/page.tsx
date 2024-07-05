@@ -22,7 +22,7 @@ export default function BackendProjects(): ReactElement {
 
   return (
     <GlobalLayout>
-      <main className="w-full min-h-screen">
+      <main className="w-full 2xl:max-w-[1920px] 2xl:mx-auto min-h-screen">
         <section className="p-5 grid grid-rows-[80px,1fr]  md:grid-cols-[300px,auto] gap-5">
           <ProjectsSearch handleSearchPrompt={handleSearchPrompt} />
           <ProjectsNavigation />
