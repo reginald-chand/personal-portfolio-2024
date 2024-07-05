@@ -4,10 +4,10 @@ import { Link as ReactScrollLink } from "react-scroll";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactElement, memo, useEffect, useState } from "react";
-import { FooterImportantNavLinks } from "../data/footer-important-nav-links";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { FooterImportantSocialMediaLinks } from "../data/footer-important-social-media-links";
-import { OnlyHomeFooterNavLinks } from "../data/footer-home-important-nav-links";
+import { FooterImportantSocialMediaLinks } from "../data/footer-important-social-media-links-data";
+import { HomeNavLinksData } from "../data/home-nav-links-data";
+import { NavLinksData } from "../data/nav-links-data";
 
 export const Footer = memo((): ReactElement => {
   const pathname = usePathname();
@@ -23,7 +23,7 @@ export const Footer = memo((): ReactElement => {
   }, []);
 
   const newFooterNavigationLinks =
-    pathname === "/" ? OnlyHomeFooterNavLinks : FooterImportantNavLinks;
+    pathname === "/" ? HomeNavLinksData : NavLinksData;
 
   return (
     <footer className="w-full p-5 grid gap-y-5 border-t-2 border-gray-900 border-dashed">

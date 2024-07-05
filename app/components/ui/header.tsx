@@ -4,7 +4,7 @@ import { ReactElement, memo, useState } from "react";
 import { Logo } from "./logo";
 import { Hamburger } from "./hamburger";
 import { HeaderNavigation } from "./header-navigation";
-import { HeaderNavLinks } from "../data/header-nav-links";
+import { NavLinksData } from "../data/nav-links-data";
 
 export const Header = memo((): ReactElement => {
   const [navigationDrawer, setNavigationDrawer] = useState<boolean>(false);
@@ -23,7 +23,7 @@ export const Header = memo((): ReactElement => {
       <HeaderNavigation
         navigationDrawer={navigationDrawer}
         handleNavigationDrawer={handleNavigationDrawer}
-        headerNavigationLinks={HeaderNavLinks}
+        headerNavigationLinks={NavLinksData}
       />
     </header>
   );

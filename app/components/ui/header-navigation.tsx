@@ -1,5 +1,5 @@
 import { ReactElement, memo } from "react";
-import { HeaderNavLinksType } from "../types/header-nav-links-type";
+import { NavLinksType } from "../types/nav-links-type";
 import { Link as ReactScrollLink } from "react-scroll";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,12 +7,13 @@ import { propValidator } from "../utils/error/prop-validation";
 import { Logo } from "./logo";
 import { Hamburger } from "./hamburger";
 import { BarsArrowDownIcon } from "@heroicons/react/24/outline";
-import { OnlyHomeHeaderNavLinks } from "../data/header-home-nav-links";
+import { HomeNavLinksData } from "../data/home-nav-links-data";
+import { NavLinksData } from "../data/nav-links-data";
 
 type Props = {
   navigationDrawer: boolean;
   handleNavigationDrawer: () => void;
-  headerNavigationLinks: Readonly<HeaderNavLinksType[]>;
+  headerNavigationLinks: Readonly<NavLinksType[]>;
 };
 
 export const HeaderNavigation = memo(
@@ -39,7 +40,7 @@ export const HeaderNavigation = memo(
     });
 
     const newHeaderNavigationLinks =
-      pathname === "/" ? OnlyHomeHeaderNavLinks : headerNavigationLinks;
+      pathname === "/" ? HomeNavLinksData : NavLinksData;
 
     return (
       <nav
