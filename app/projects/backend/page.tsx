@@ -2,11 +2,11 @@
 
 import { ReactElement, useState } from "react";
 import { GlobalLayout } from "@/app/components/layouts/_app";
-import { FeaturedProjectsSectionProjectsData } from "@/app/components/data/featured-projects-section-projects-data";
 import { Projects } from "@/app/components/ui/page/projects/projects";
 import { useProjectList } from "@/app/components/hooks/use-project-list";
 import { ProjectsNavigation } from "@/app/components/ui/page/projects/projects-navigation";
 import { ProjectsSearch } from "@/app/components/ui/page/projects/projects-search";
+import { BackendProjectsData } from "@/app/components/data/backend-projects-data";
 
 export default function BackendProjects(): ReactElement {
   const [searchPrompt, setSearchPrompt] = useState<string>();
@@ -17,7 +17,7 @@ export default function BackendProjects(): ReactElement {
 
   const [newProjectList] = useProjectList({
     searchPrompt: searchPrompt,
-    projectList: FeaturedProjectsSectionProjectsData,
+    projectList: BackendProjectsData,
   });
 
   return (
