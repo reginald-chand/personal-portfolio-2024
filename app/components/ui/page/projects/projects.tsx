@@ -30,7 +30,7 @@ export const Projects = memo(
                     {element.title}
                   </Link>
 
-                  <p className="h-fit md:h-[180px] lg:h-[200px] mb-5 md:mb-0 font-light">
+                  <p className="h-fit md:h-[180px] mb-5 md:mb-0 font-light">
                     {element.description.length <= 200
                       ? element.description
                       : `${element.description.substring(0, 200)}...`}
