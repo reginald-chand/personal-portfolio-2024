@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type HeaderNavLinksType = {
+export type NavLinksType = {
   title: string;
   link: string;
   icon: ReactNode;
