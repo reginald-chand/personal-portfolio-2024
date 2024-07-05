@@ -5,9 +5,9 @@ import {
   UserGroupIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import { HeaderNavLinksType } from "../types/header-nav-links-type";
+import { NavLinksType } from "../types/nav-links-type";
 
-export const HeaderNavLinks: Readonly<HeaderNavLinksType[]> = [
+export const NavLinksData: Readonly<NavLinksType[]> = [
   {
     title: "Home",
     link: "/",
