@@ -1,10 +1,6 @@
-type BackendProjectsType = {
-  title: string;
-  link: string;
-  description: string;
-};
+import { ProjectsDataType } from "../types/projects-data-type";
 
-export const BackendProjectsData: Readonly<BackendProjectsType[]> = [
+export const BackendProjectsData: Readonly<ProjectsDataType[]> = [
   {
     title: "Identity management system backend",
     link: "https://github.com/reginald-chand/identity-management-system-backend",
