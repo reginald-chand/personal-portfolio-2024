@@ -80,7 +80,7 @@ export const AboutHeroSection = memo((): ReactElement => {
       </div>
 
       <div className="grid grid-cols-2 gap-5">
-        <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md  animate-jsGlow">
+        <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md animate-jsGlow">
           <TbBrandJavascript className="w-1/2 h-1/2 text-[#F0DB4F] animate-pulse" />
         </div>
 
