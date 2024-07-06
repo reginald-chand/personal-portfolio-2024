@@ -151,7 +151,7 @@ export const Footer = memo((): ReactElement => {
 
         <div className="mt-2 lg:mt-0 lg:text-right">
           <Link
-            href="/"
+            href="#"
             className="uppercase text-sm font-medium text-[#f9fafb40] hover:text-brand-primary transition-colors duration-300 ease-linear"
           >
             Move to top
