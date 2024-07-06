@@ -79,7 +79,7 @@ export const AboutHeroSection = memo((): ReactElement => {
         </div>
       </div>
 
-      <div className="grid lg:grid-rows-[repeat(autofill,minmax(250px,1fr))] grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5">
         <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md  animate-jsGlow">
           <TbBrandJavascript className="w-1/2 h-1/2 text-yellow-500 animate-pulse" />
         </div>
