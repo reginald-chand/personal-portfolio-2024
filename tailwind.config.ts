@@ -23,19 +23,19 @@ const config: Config = {
         },
         jsGlow: {
           "0%, 100%": { "border-color": "#111827" },
-          "50%": { "border-color": "#eab308" },
+          "50%": { "border-color": "#F0DB4F" },
         },
         reactGlow: {
           "0%, 100%": { "border-color": "#111827" },
-          "50%": { "border-color": "#60a5fa" },
+          "50%": { "border-color": "#61DBFB" },
         },
         nodeGlow: {
           "0%, 100%": { "border-color": "#111827" },
-          "50%": { "border-color": "#15803d" },
+          "50%": { "border-color": "#339933" },
         },
         mongoGlow: {
           "0%, 100%": { "border-color": "#111827" },
-          "50%": { "border-color": "#4ade80" },
+          "50%": { "border-color": "#47A248" },
         },
       },
       animation: {

@@ -81,19 +81,19 @@ export const AboutHeroSection = memo((): ReactElement => {
 
       <div className="grid grid-cols-2 gap-5">
         <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md  animate-jsGlow">
-          <TbBrandJavascript className="w-1/2 h-1/2 text-yellow-500 animate-pulse" />
+          <TbBrandJavascript className="w-1/2 h-1/2 text-[#F0DB4F] animate-pulse" />
         </div>
 
         <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md  animate-reactGlow">
-          <IoLogoReact className="w-1/2 h-1/2 text-blue-400 animate-spin" />
+          <IoLogoReact className="w-1/2 h-1/2 text-[#61DBFB] animate-spin" />
         </div>
 
         <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md animate-mongoGlow">
-          <SiMongodb className="w-1/2 h-1/2 text-green-400 animate-wiggle" />
+          <SiMongodb className="w-1/2 h-1/2 text-[#47A248] animate-wiggle" />
         </div>
 
         <div className="flex items-center justify-center border-2 border-dashed border-gray-900 rounded-md  animate-nodeGlow">
-          <IoLogoNodejs className="w-1/2 h-1/2 text-green-700 animate-pulse" />
+          <IoLogoNodejs className="w-1/2 h-1/2 text-[#339933] animate-pulse" />
         </div>
       </div>
     </section>
