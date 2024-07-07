@@ -13,7 +13,7 @@ export const HeroSection = memo((): ReactElement => {
         </h1>
 
         <h2 className="mb-5 text-[0.8rem] sm:text-sm xl:text-2xl">
-          <span className="mt-2 font-bold uppercase">
+          <span className="font-bold uppercase">
             Welcome to my&nbsp;
             <span className="relative inline-block animate-pulse transition-transform duration-300 ease-linear -z-50">
               portfolio!
