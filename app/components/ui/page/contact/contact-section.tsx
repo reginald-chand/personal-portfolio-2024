@@ -182,11 +182,13 @@ export const ContactSection = memo((): ReactElement => {
         <button
           type="submit"
           onClick={handleContactFormDataSubmission}
-          className="p-5 lg:col-span-2 flex items-center justify-center rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary disabled:pointer-events-none disabled:bg-red-500 hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+          className={`p-5 lg:col-span-2 text-sm uppercase font-bold flex items-center ${
+            loading ? "justify-evenly" : "justify-center"
+          } rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary disabled:pointer-events-none disabled:bg-red-500 hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear`}
           disabled={loading ? true : false}
         >
           <span>Submit your message</span>
-          <span className="ml-5">
+          <span>
             <HashLoader
               color="#ffffff"
               loading={loading}
