@@ -7,8 +7,8 @@ import { ReactElement, memo } from "react";
 export const HeroSection = memo((): ReactElement => {
   return (
     <section className="w-full p-5 flex flex-col md:flex-row items-center justify-evenly">
-      <div className="ml-5 md:ml-0">
-        <h1 className="text-[1.7rem] xl:text-7xl font-black lowercase">
+      <div>
+        <h1 className="text-2xl sm:text-3xl xl:text-7xl font-black lowercase">
           Full Stack Engineer
         </h1>
 

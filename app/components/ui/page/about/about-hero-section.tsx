@@ -6,10 +6,10 @@ import { TbBrandJavascript } from "react-icons/tb";
 
 export const AboutHeroSection = memo((): ReactElement => {
   return (
-    <section className="p-5 grid xl:grid-cols-2 gap-5">
-      <div className="p-5 border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear">
+    <section className="p-5 grid lg:grid-cols-2 gap-5">
+      <div className="md:p-5 md:border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear">
         <div className="">
-          <h1 className="text-[1.7rem] xl:text-7xl font-black lowercase">
+          <h1 className="text-2xl sm:text-3xl xl:text-7xl font-black lowercase">
             Reginald Chand
           </h1>
 
@@ -22,10 +22,10 @@ export const AboutHeroSection = memo((): ReactElement => {
             </span>
           </h2>
 
-          <p className="max-w-[600px] mb-5 font-light xl:text-justify leading-relaxed">
-            <strong className="font-black">Reginald Sahil Chand</strong> is
+          <p className="max-w-[600px] mb-5 font-light md:text-justify leading-relaxed">
+            <strong className="font-bold">Reginald Sahil Chand</strong> is
             a&nbsp;
-            <em className="text-brand-primary font-semibold">
+            <em className="text-brand-primary font-medium">
               dedicated Full Stack Engineer with a strong focus on backend
               technologies.&nbsp;
             </em>
@@ -39,7 +39,7 @@ export const AboutHeroSection = memo((): ReactElement => {
             complex systems.
           </p>
 
-          <p className="max-w-[600px] mb-5 font-extralight text-[0.8rem] xl:text-justify leading-relaxed">
+          <p className="max-w-[600px] mb-5 font-extralight text-[0.8rem] md:text-justify leading-relaxed">
             Proficient in&nbsp;
             <span className="font-bold">
               HTML, CSS, JavaScript (TypeScript), React, Next.js, C++, and
