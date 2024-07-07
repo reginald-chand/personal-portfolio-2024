@@ -139,7 +139,7 @@ export const ContactSection = memo((): ReactElement => {
   return (
     <section className="w-full min-h-screen p-5 flex flex-row-reverse items-center justify-center xl:justify-evenly">
       <ToastContainer />
-      <form className="sm:w-1/2 xl:w-1/3 p-5 grid lg:grid-cols-2 gap-5 border-2 border-dashed border-gray-900 rounded-md">
+      <form className="w-full xl:w-1/3 p-5 grid lg:grid-cols-2 gap-5 border-2 border-dashed border-gray-900 rounded-md">
         <div>
           <label htmlFor="firstName" className="mb-2 block">
             First Name <span className="text-red-500">*</span>
