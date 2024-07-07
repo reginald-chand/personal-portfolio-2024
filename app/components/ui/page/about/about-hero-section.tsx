@@ -10,12 +10,12 @@ export const AboutHeroSection = memo((): ReactElement => {
       <div className="md:p-5 md:border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear">
         <div className="">
           <h1 className="text-2xl sm:text-3xl xl:text-7xl font-black lowercase">
-            Reginald Chand
+            Know about me
           </h1>
 
           <h2 className="mb-5 text-[0.8rem] sm:text-sm xl:text-2xl">
-            <span className="mt-2 inline-block font-bold uppercase">
-              Who am i&nbsp;
+            <span className="inline-block font-bold uppercase">
+              Who am I&nbsp;
               <span className="relative inline-block animate-pulse transition-transform duration-300 ease-linear -z-50">
                 🤔
               </span>
