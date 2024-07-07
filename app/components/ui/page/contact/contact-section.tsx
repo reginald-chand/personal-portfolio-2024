@@ -2,6 +2,7 @@
 
 import { formValidator } from "@/app/components/utils/error/form-validation";
 import { ChangeEvent, ReactElement, memo, useState } from "react";
+import HashLoader from "react-spinners/HashLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,6 +11,7 @@ export const ContactSection = memo((): ReactElement => {
   const [lastName, setLastName] = useState<string | null>("");
   const [email, setEmail] = useState<string | null>("");
   const [message, setMessage] = useState<string | null>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleFirstNameInput = (event: ChangeEvent<HTMLInputElement>) => {
     if (event && event) {
@@ -41,6 +43,36 @@ export const ContactSection = memo((): ReactElement => {
 
   const handleContactFormDataSubmission = async (event: any) => {
     event.preventDefault();
+
+    if (!navigator.onLine) {
+      toast.error("Seems like you are offline. 😟 Form not sent!", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      return null;
+    }
+
+    if (loading) {
+      toast.warn("Please wait! form is sending! 🥸", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+
+      return null;
+    }
 
     const firstNameValidationFailed = formValidator({
       formInputElement: firstName,
@@ -91,6 +123,8 @@ export const ContactSection = memo((): ReactElement => {
           theme: "dark",
         });
 
+        setLoading(true);
+
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -133,6 +167,8 @@ export const ContactSection = memo((): ReactElement => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -205,9 +241,19 @@ export const ContactSection = memo((): ReactElement => {
         <button
           type="submit"
           onClick={handleContactFormDataSubmission}
-          className="p-5 lg:col-span-2 inline-block rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+          className="p-5 lg:col-span-2 flex items-center justify-center rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary disabled:pointer-events-none disabled:bg-red-500 hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
+          disabled={loading ? true : false}
         >
-          Submit your message
+          <span>Submit your message</span>
+          <span className="ml-5">
+            <HashLoader
+              color="#ffffff"
+              loading={loading}
+              size={20}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </span>
         </button>
       </form>
 
