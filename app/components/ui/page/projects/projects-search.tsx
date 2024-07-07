@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
+import { ChangeEvent, ReactElement } from "react";
 
 export const ProjectsSearch = ({
   handleSearchPrompt,
 }: {
-  handleSearchPrompt: (event: any) => void;
+  handleSearchPrompt: (event: ChangeEvent<HTMLInputElement>) => void;
 }): ReactElement => {
   return (
     <div className="md:col-span-2 border-2 border-dashed border-gray-900 rounded-md">
