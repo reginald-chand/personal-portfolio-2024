@@ -45,6 +45,9 @@ const config: Config = {
         nodeGlow: "nodeGlow 2s 4s ease-in-out forwards",
         mongoGlow: "mongoGlow 2s 6s ease-in-out forwards",
       },
+      screens: {
+        sm: "320px",
+      },
     },
   },
   plugins: [],
