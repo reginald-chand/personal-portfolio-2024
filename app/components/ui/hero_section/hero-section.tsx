@@ -8,12 +8,12 @@ export const HeroSection = memo((): ReactElement => {
   return (
     <section className="w-full p-5 flex flex-col md:flex-row items-center justify-evenly">
       <div className="ml-5 md:ml-0">
-        <h1 className="text-2xl sm:text-3xl xl:text-7xl font-black lowercase">
+        <h1 className="text-[1.7rem] xl:text-7xl font-black lowercase">
           Full Stack Engineer
         </h1>
 
-        <h2 className="mb-5 text-[0.61rem] sm:text-sm xl:text-2xl">
-          <span className="font-bold uppercase">
+        <h2 className="mb-5 text-[0.8rem] sm:text-sm xl:text-2xl">
+          <span className="mt-2 font-bold uppercase">
             Welcome to my&nbsp;
             <span className="relative inline-block animate-pulse transition-transform duration-300 ease-linear -z-50">
               portfolio!
