@@ -139,31 +139,29 @@ export const ContactSection = memo((): ReactElement => {
 
         const responseData = await response.json();
 
-        setTimeout(() => {
-          if (!response.ok) {
-            toast.error(responseData.responseMessage, {
-              position: "top-left",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-            });
-          } else {
-            toast.success(responseData.responseMessage, {
-              position: "top-left",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-            });
-          }
-        }, 2500);
+        if (!response.ok) {
+          toast.error(responseData.responseMessage, {
+            position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        } else {
+          toast.success(responseData.responseMessage, {
+            position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }
       }
     } catch (error) {
       console.log(error);
