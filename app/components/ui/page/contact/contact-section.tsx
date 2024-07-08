@@ -105,6 +105,10 @@ export const ContactSection = memo((): ReactElement => {
         showToast("error", responseData.responseMessage);
       } else {
         showToast("success", responseData.responseMessage);
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
       }
     } catch (error) {
       showToast("error", "An error occurred! Check your network connection 🤔");
