@@ -3,7 +3,7 @@ import { ReactElement, memo } from "react";
 
 export const AboutContactSection = memo((): ReactElement => {
   return (
-    <section className="w-full p-5">
+    <section className="w-full p-5 pt-0">
       <div className="p-5 border-2 border-dashed border-gray-900 rounded-md hover:border-brand-primary transition-colors duration-300 ease-linear">
         <h2 className="mb-2 text-2xl">My Contact Information</h2>
 

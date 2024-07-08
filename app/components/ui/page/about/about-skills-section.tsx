@@ -35,7 +35,7 @@ import { AboutSkillsContainer } from "./about-skills-container";
 
 export const AboutSkillsSection = memo((): ReactElement => {
   return (
-    <section className="w-full p-5">
+    <section className="w-full px-5">
       <h2 className="text-2xl">My Skills</h2>
       <div>
         <h3 className="my-5 text-sm font-bold uppercase text-brand-primary">
