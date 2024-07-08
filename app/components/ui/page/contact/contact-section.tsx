@@ -8,6 +8,7 @@ import {
   ReactElement,
   SetStateAction,
   memo,
+  useRef,
   useState,
 } from "react";
 import HashLoader from "react-spinners/HashLoader";
@@ -20,6 +21,11 @@ export const ContactSection = memo((): ReactElement => {
   const [email, setEmail] = useState<string | null>("");
   const [message, setMessage] = useState<string | null>("");
   const [loading, setLoading] = useState<boolean>(false);
+
+  const referenceFirstName = useRef<HTMLInputElement>(null);
+  const referenceLastName = useRef<HTMLInputElement>(null);
+  const referenceEmail = useRef<HTMLInputElement>(null);
+  const referenceMessage = useRef<HTMLTextAreaElement>(null);
 
   const handleInputChange =
     (inputElementState: Dispatch<SetStateAction<string | null>>) =>
@@ -105,10 +111,17 @@ export const ContactSection = memo((): ReactElement => {
         showToast("error", responseData.responseMessage);
       } else {
         showToast("success", responseData.responseMessage);
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setMessage("");
+        if (
+          referenceFirstName.current !== null &&
+          referenceLastName.current !== null &&
+          referenceEmail.current !== null &&
+          referenceMessage.current !== null
+        ) {
+          referenceFirstName.current.value = "";
+          referenceLastName.current.value = "";
+          referenceEmail.current.value = "";
+          referenceMessage.current.value = "";
+        }
       }
     } catch (error) {
       showToast("error", "An error occurred! Check your network connection 🤔");
@@ -132,6 +145,7 @@ export const ContactSection = memo((): ReactElement => {
             autoComplete="given-name"
             placeholder="Reginald"
             required
+            ref={referenceFirstName}
             onChange={handleInputChange(setFirstName)}
             className="w-full p-5 block border-2 border-dashed border-gray-900 rounded-md bg-transparent outline-none hover:border-brand-primary focus:border-blue-800 transition-colors duration-300 ease-linear"
           />
@@ -148,6 +162,7 @@ export const ContactSection = memo((): ReactElement => {
             autoComplete="family-name"
             placeholder="Chand"
             required
+            ref={referenceLastName}
             onChange={handleInputChange(setLastName)}
             className="w-full p-5 block border-2 border-dashed border-gray-900 rounded-md bg-transparent outline-none hover:border-brand-primary focus:border-blue-800 transition-colors duration-300 ease-linear"
           />
@@ -164,6 +179,7 @@ export const ContactSection = memo((): ReactElement => {
             autoComplete="email"
             placeholder="reginald-chand@outlook.com"
             required
+            ref={referenceEmail}
             onChange={handleInputChange(setEmail)}
             className="w-full p-5 block border-2 border-dashed border-gray-900 rounded-md bg-transparent outline-none hover:border-brand-primary focus:border-blue-800 transition-colors duration-300 ease-linear"
           />
@@ -178,6 +194,7 @@ export const ContactSection = memo((): ReactElement => {
             id="message"
             placeholder="Enter your message here"
             required
+            ref={referenceMessage}
             onChange={handleInputChange(setMessage)}
             className="w-full min-h-60 p-5 block border-2 border-dashed border-gray-900 rounded-md resize-none bg-transparent outline-none hover:border-brand-primary focus:border-blue-800 transition-colors duration-300 ease-linear"
           ></textarea>
