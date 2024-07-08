@@ -2,7 +2,6 @@ import {
   HomeIcon,
   PhoneIcon,
   SquaresPlusIcon,
-  UserGroupIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
 import { NavLinksType } from "../types/nav-links-type";
@@ -30,11 +29,5 @@ export const NavLinksData: Readonly<NavLinksType[]> = [
     title: "Contact me",
     link: "/contact",
     icon: <PhoneIcon />,
-  },
-
-  {
-    title: "Admin",
-    link: "/admin",
-    icon: <UserGroupIcon />,
   },
 ];
