@@ -5,7 +5,7 @@ import { ContactSection } from "../components/ui/page/contact/contact-section";
 export default function Contact(): ReactElement {
   return (
     <GlobalLayout>
-      <main className="w-full 2xl:max-w-[1920px] 2xl:mx-auto min-h-screen">
+      <main className="w-full 2xl:max-w-[1920px] 2xl:mx-auto">
         <ContactSection />
       </main>
     </GlobalLayout>
