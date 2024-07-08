@@ -13,6 +13,7 @@ import {
   TbBrandNextjs,
   TbBrandOffice,
   TbBrandPython,
+  TbBrandReactNative,
   TbBrandTypescript,
   TbBrandVisualStudio,
   TbBrandVscode,
@@ -121,6 +122,23 @@ export const AboutSkillsSection = memo((): ReactElement => {
             <AboutSkillContainer
               skillIcon={<SiMongodb className="w-1/2 h-1/2 text-[#47A248]" />}
               borderHover="hover:border-[#47A248]"
+            />
+          </AboutSkillsContainer>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="my-5 text-sm font-bold uppercase text-brand-primary">
+          Android
+        </h3>
+
+        <div>
+          <AboutSkillsContainer>
+            <AboutSkillContainer
+              skillIcon={
+                <TbBrandReactNative className="w-1/2 h-1/2 text-[#61DAFB]" />
+              }
+              borderHover="hover:border-[#61DAFB]"
             />
           </AboutSkillsContainer>
         </div>
