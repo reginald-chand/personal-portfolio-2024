@@ -121,6 +121,11 @@ export const ContactSection = memo((): ReactElement => {
           referenceLastName.current.value = "";
           referenceEmail.current.value = "";
           referenceMessage.current.value = "";
+
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setMessage("");
         }
       }
     } catch (error) {
