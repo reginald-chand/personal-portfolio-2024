@@ -54,7 +54,7 @@ export const AboutHeroSection = memo((): ReactElement => {
 
           <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between">
             <a
-              href="#"
+              href="/resume-2024.pdf"
               download
               type="button"
               className="mt-5 lg:mt-0 p-5 inline-block rounded-md border-2 border-dashed border-transparent cursor-pointer bg-brand-primary hover:bg-transparent hover:border-gray-900 active:scale-95 group transition-all duration-300 ease-linear"
