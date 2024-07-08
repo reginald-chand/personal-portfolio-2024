@@ -4,7 +4,7 @@ import { UpcomingProjectsSectionProjectsData } from "../../data/upcoming-project
 
 export const UpComingProjectsSection = memo((): ReactElement => {
   return (
-    <section id="upcoming-projects" className="w-full p-5">
+    <section id="upcoming-projects" className="w-full p-5 pt-0">
       <h2 className="mb-5 text-2xl">Upcoming Projects</h2>
       <div className="w-full flex items-center justify-center">
         <div className="w-full p-5 border-2 border-dashed border-gray-900 rounded-md">
@@ -12,7 +12,7 @@ export const UpComingProjectsSection = memo((): ReactElement => {
             UpcomingProjectsSectionProjectsData.map((element, index) => (
               <div
                 key={index}
-                className="lg:p-5 lg:border-2 lg:border-dashed lg:border-gray-900 lg:rounded-md lg:hover:border-brand-primary transition-colors duration-300 ease-linear"
+                className="lg:p-5 lg:border-2 border-dashed border-gray-900 rounded-md lg:hover:border-brand-primary transition-colors duration-300 ease-linear"
               >
                 <Link
                   href={element.link}
